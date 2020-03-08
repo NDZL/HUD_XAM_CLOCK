@@ -1,0 +1,16 @@
+20:31 08/03/2020
+
+Alternatively, depending on their use case, they could potentially leverage an application I’ve created which acts as an interface between the HUD and another application using Broadcast Intents. This enables applications to send text to the HUD unit and allows customization of the font size, colour and positioning. I’ve attached the APK if you want to take a look. An example broadcast intent using ADB would be:
+
+ 
+
+adb shell am broadcast -a com.zebra.hudinterface.DISPLAY_TEXT_SINGLE_STRING --es single_string.data "test_data0002~END~CYAN~8"
+
+ 
+
+where the single_string.data extra follows the format: “TEXT_TO_DISPLAY~JUSTIFICATION~COLOUR~SIZE”
+
+ 
+
+There is a fair bit more functionality in the application (showing the HUD display overlaid on the device screen, showing multiple lines in a single intent etc…), which I can walk you through over a call if you think this is something they may be interested in.
+
